@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<!-- Main settings -->
+	<RTRS.SettingsCategory>RTRS: Room Settings</RTRS.SettingsCategory>
+	<RTRS.ResetAll>Reset all settings</RTRS.ResetAll>
+	<RTRS.ResetAllConfirm>This will reset all your changes to default values. Continue?</RTRS.ResetAllConfirm>
+	<!-- Tabs -->
+	<RTRS.TabBedroom>Bedroom</RTRS.TabBedroom>
+	<RTRS.TabThroneRoom>Throne Room</RTRS.TabThroneRoom>
+	<RTRS.TabBallroom>Ballroom</RTRS.TabBallroom>
+	<RTRS.TabGallery>Gallery</RTRS.TabGallery>
+	<RTRS.TabCourt>Court</RTRS.TabCourt>
+	<!-- Common UI -->
+	<RTRS.Area>Area</RTRS.Area>
+	<RTRS.Impressiveness>Impressiveness</RTRS.Impressiveness>
+	<RTRS.Thing>Thing</RTRS.Thing>
+	<RTRS.Count>Count</RTRS.Count>
+	<RTRS.ThingsAnyOf>Any of things</RTRS.ThingsAnyOf>
+	<RTRS.ThingsAllMustGlow>Things (all must glow)</RTRS.ThingsAllMustGlow>
+	<RTRS.ThingMustGlow>Thing (must glow)</RTRS.ThingMustGlow>
+	<RTRS.Thrones>Thrones</RTRS.Thrones>
+	<RTRS.TerrainTags>Terrain tags</RTRS.TerrainTags>
+	<RTRS.ForbiddenBuildingTags>Forbidden building tags</RTRS.ForbiddenBuildingTags>
+	<RTRS.NoFieldsAltars>Forbids all altars in the room. No additional fields.</RTRS.NoFieldsAltars>
+	<RTRS.NoFieldsInstrument>Requires dance space around all musical instruments. No additional fields.</RTRS.NoFieldsInstrument>
+	<RTRS.NoEditor>No editor available for {0}</RTRS.NoEditor>
+	<RTRS.Add>Add</RTRS.Add>
+	<RTRS.Reset>Reset</RTRS.Reset>
+	<RTRS.ResetConfirm>Reset requirements for {0} to original values?</RTRS.ResetConfirm>
+	<RTRS.EmptyList>no requirements — press [+] to add</RTRS.EmptyList>
+	<RTRS.None>none</RTRS.None>
+	<RTRS.CourtRequirement>From {0} to {1}: {2} pcs</RTRS.CourtRequirement>
+	<RTRS.SearchResults>Found: {0} of {1}</RTRS.SearchResults>
+	<!-- Requirement types (used in dropdowns and short descriptions) -->
+	<RTRS.ReqType_Area>Room area</RTRS.ReqType_Area>
+	<RTRS.ReqType_Impressiveness>Room impressiveness</RTRS.ReqType_Impressiveness>
+	<RTRS.ReqType_Thing>Thing presence</RTRS.ReqType_Thing>
+	<RTRS.ReqType_ThingCount>Thing count</RTRS.ReqType_ThingCount>
+	<RTRS.ReqType_ThingAnyOf>Any of things</RTRS.ReqType_ThingAnyOf>
+	<RTRS.ReqType_ThingAnyOfCount>Count of any things</RTRS.ReqType_ThingAnyOfCount>
+	<RTRS.ReqType_TerrainWithTags>Floor tags</RTRS.ReqType_TerrainWithTags>
+	<RTRS.ReqType_ForbiddenBuildings>Forbidden buildings</RTRS.ReqType_ForbiddenBuildings>
+	<RTRS.ReqType_ForbidAltars>Forbid altars</RTRS.ReqType_ForbidAltars>
+	<RTRS.ReqType_AllThingsAreGlowing>All things glowing</RTRS.ReqType_AllThingsAreGlowing>
+	<RTRS.ReqType_AllThingsAnyOfAreGlowing>All things (from list) glowing</RTRS.ReqType_AllThingsAnyOfAreGlowing>
+	<RTRS.ReqType_HasAssignedThroneAnyOf>Assigned throne (any of)</RTRS.ReqType_HasAssignedThroneAnyOf>
+	<RTRS.ReqType_InstrumentSpace>Dance space</RTRS.ReqType_InstrumentSpace>
+	<!-- Disabling precepts (Ideology) -->
+	<RTRS.PreceptsButton>Disable by precepts</RTRS.PreceptsButton>
+	<RTRS.PreceptsStatusSet>set: {0}</RTRS.PreceptsStatusSet>
+	<RTRS.PreceptsStatusNotSet>not set</RTRS.PreceptsStatusNotSet>
+	<RTRS.PreceptsTooltip>If the pawn's ideoligion contains any of the listed precepts, this requirement is ignored for them. Requires Ideology DLC.</RTRS.PreceptsTooltip>
+	<RTRS.DisablingPreceptsTitle>Disabling precepts</RTRS.DisablingPreceptsTitle>
+	<RTRS.DisablingPreceptsDesc>If the pawn's ideoligion contains any of these precepts, the requirement is disabled for them. Requires Ideology DLC.</RTRS.DisablingPreceptsDesc>
+	<RTRS.PreceptsEmpty>no precepts configured</RTRS.PreceptsEmpty>
+	<!-- Additional for custom display (tooltip and list) -->
+	<RTRS.Things>Things</RTRS.Things>
+	<RTRS.OriginalType>Original type</RTRS.OriginalType>
+</LanguageData>

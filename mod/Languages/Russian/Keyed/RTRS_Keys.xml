@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<!-- Основные настройки -->
+	<RTRS.SettingsCategory>RTRS: Комнаты дворян</RTRS.SettingsCategory>
+	<RTRS.ResetAll>Сбросить все настройки</RTRS.ResetAll>
+	<RTRS.ResetAllConfirm>Это сбросит все ваши изменения к значениям по умолчанию. Продолжить?</RTRS.ResetAllConfirm>
+	<!-- Вкладки -->
+	<RTRS.TabBedroom>Спальня</RTRS.TabBedroom>
+	<RTRS.TabThroneRoom>Тронный зал</RTRS.TabThroneRoom>
+	<RTRS.TabBallroom>Бальный зал</RTRS.TabBallroom>
+	<RTRS.TabGallery>Галерея</RTRS.TabGallery>
+	<RTRS.TabCourt>Свита</RTRS.TabCourt>
+	<!-- Общие элементы UI -->
+	<RTRS.Area>Площадь</RTRS.Area>
+	<RTRS.Impressiveness>Впечатление</RTRS.Impressiveness>
+	<RTRS.Thing>Вещь</RTRS.Thing>
+	<RTRS.Count>Количество</RTRS.Count>
+	<RTRS.ThingsAnyOf>Вещи (любая из)</RTRS.ThingsAnyOf>
+	<RTRS.ThingsAllMustGlow>Вещи (все должны светиться)</RTRS.ThingsAllMustGlow>
+	<RTRS.ThingMustGlow>Вещь (должна светиться)</RTRS.ThingMustGlow>
+	<RTRS.Thrones>Троны</RTRS.Thrones>
+	<RTRS.TerrainTags>Теги пола</RTRS.TerrainTags>
+	<RTRS.ForbiddenBuildingTags>Запрещённые теги построек</RTRS.ForbiddenBuildingTags>
+	<RTRS.NoFieldsAltars>Запрещает все алтари в комнате. Дополнительных полей нет.</RTRS.NoFieldsAltars>
+	<RTRS.NoFieldsInstrument>Требует свободное место для танцев вокруг всех музыкальных инструментов. Дополнительных полей нет.</RTRS.NoFieldsInstrument>
+	<RTRS.NoEditor>Редактор для типа {0} не доступен</RTRS.NoEditor>
+	<RTRS.Add>Добавить</RTRS.Add>
+	<RTRS.Reset>Сбросить</RTRS.Reset>
+	<RTRS.ResetConfirm>Сбросить требования для {0} к исходным значениям?</RTRS.ResetConfirm>
+	<RTRS.EmptyList>нет требований — нажмите [+] чтобы добавить</RTRS.EmptyList>
+	<RTRS.None>нет</RTRS.None>
+	<RTRS.CourtRequirement>От {0} до {1}: {2} шт.</RTRS.CourtRequirement>
+	<RTRS.SearchResults>Найдено: {0} из {1}</RTRS.SearchResults>
+	<!-- Типы требований (используются в выпадающих списках и кратких описаниях) -->
+	<RTRS.ReqType_Area>Площадь комнаты</RTRS.ReqType_Area>
+	<RTRS.ReqType_Impressiveness>Впечатление комнаты</RTRS.ReqType_Impressiveness>
+	<RTRS.ReqType_Thing>Наличие вещи</RTRS.ReqType_Thing>
+	<RTRS.ReqType_ThingCount>Количество вещей</RTRS.ReqType_ThingCount>
+	<RTRS.ReqType_ThingAnyOf>Любая из вещей</RTRS.ReqType_ThingAnyOf>
+	<RTRS.ReqType_ThingAnyOfCount>Количество любых вещей</RTRS.ReqType_ThingAnyOfCount>
+	<RTRS.ReqType_TerrainWithTags>Теги пола</RTRS.ReqType_TerrainWithTags>
+	<RTRS.ReqType_ForbiddenBuildings>Запрещённые постройки</RTRS.ReqType_ForbiddenBuildings>
+	<RTRS.ReqType_ForbidAltars>Запрет алтарей</RTRS.ReqType_ForbidAltars>
+	<RTRS.ReqType_AllThingsAreGlowing>Все вещи светятся</RTRS.ReqType_AllThingsAreGlowing>
+	<RTRS.ReqType_AllThingsAnyOfAreGlowing>Все вещи (из списка) светятся</RTRS.ReqType_AllThingsAnyOfAreGlowing>
+	<RTRS.ReqType_HasAssignedThroneAnyOf>Назначенный трон (любой из)</RTRS.ReqType_HasAssignedThroneAnyOf>
+	<RTRS.ReqType_InstrumentSpace>Пространство для танцев</RTRS.ReqType_InstrumentSpace>
+	<!-- Отключение по доктринам (Ideology) -->
+	<RTRS.PreceptsButton>Отключение по доктринам</RTRS.PreceptsButton>
+	<RTRS.PreceptsStatusSet>задано: {0} шт.</RTRS.PreceptsStatusSet>
+	<RTRS.PreceptsStatusNotSet>не задано</RTRS.PreceptsStatusNotSet>
+	<RTRS.PreceptsTooltip>Если идеология пешки содержит любую из перечисленных доктрин, это требование для неё игнорируется. Требуется DLC Ideology.</RTRS.PreceptsTooltip>
+	<RTRS.DisablingPreceptsTitle>Отключающие доктрины</RTRS.DisablingPreceptsTitle>
+	<RTRS.DisablingPreceptsDesc>Если идеология пешки содержит любую из этих доктрин, требование для неё отключается. Требуется DLC Ideology.</RTRS.DisablingPreceptsDesc>
+	<RTRS.PreceptsEmpty>доктрины не заданы</RTRS.PreceptsEmpty>
+	<!-- Дополнительно для кастомного отображения (тултип и список) -->
+	<RTRS.Things>Вещи</RTRS.Things>
+	<RTRS.OriginalType>Оригинальный тип</RTRS.OriginalType>
+</LanguageData>

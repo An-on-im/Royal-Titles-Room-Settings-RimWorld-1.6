@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Royal Titles Room Settings</name>
+	<author>AnOnIm</author>
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+	<packageId>AnOnIm.RoyalTitlesRoomSettings</packageId>
+	<description>Allows you to customize room requirements (bedroom, throne room, ballroom, gallery, and court) for each royal title via an in-game settings menu. Supports Royalty DLC, Ideology precept disabling, and VFE – Empire integration.</description>
+	<modDependencies>
+		<li>
+			<packageId>Ludeon.RimWorld.Royalty</packageId>
+			<displayName>Royalty</displayName>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>OskarPotocki.VFE.Empire</li>
+	</loadAfter>
+</ModMetaData>

@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<RootNamespace>$(MSBuildProjectName)</RootNamespace>
+		<AssemblyTitle>$(MSBuildProjectName)</AssemblyTitle>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<Product>$(MSBuildProjectName)</Product>
+		<TargetFramework>net48</TargetFramework>
+		<RuntimeIdentifier>win</RuntimeIdentifier>
+		<OutputPath>mod\1.6\Assemblies\</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<LangVersion>latest</LangVersion>
+		<WarningLevel>4</WarningLevel>
+		<Version>1.6.1</Version>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<Optimize>true</Optimize>
+		<DebugType>none</DebugType>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="mod\**" />
+	  <EmbeddedResource Remove="mod\**" />
+	  <None Remove="mod\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*" ExcludeAssets="runtime" />
+		<PackageReference Include="Lib.Harmony" Version="2.3.*" ExcludeAssets="runtime" />
+		<PackageReference Include="Krafs.Publicizer" Version="2.3.*" ExcludeAssets="runtime" />
+		<Publicize Include="Assembly-CSharp" />
+	</ItemGroup>
+</Project>
