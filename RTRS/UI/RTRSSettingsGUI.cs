@@ -15,13 +15,11 @@ namespace RoyalTitlesRoomSettings
         private const float LeftPanelWidth = 200f;
         private const float BottomBarHeight = 40f;
         private const float TabBarHeight = 32f;
-        private const float TitleHeaderHeight = 40f;
 
         private delegate void TabDrawAction(Rect rect, RoyalTitleDef title, string tabId, ref Vector2 scrollPos);
 
         private static Vector2 leftScrollPos;
         private static Vector2 rightScrollPos;
-
         private static RoyalTitleDef selectedTitle;
         private static string activeTabId = "bedroom";
         private static List<RoyalTitleDef> cachedTitles;
@@ -50,11 +48,13 @@ namespace RoyalTitlesRoomSettings
         {
             if (cachedTitles != null)
                 return;
+
             OriginalRequirementsCache.EnsureCache();
             cachedTitles = DefDatabase<RoyalTitleDef>.AllDefsListForReading
                 .Where(t => t.seniority > 0)
                 .OrderBy(t => t.seniority)
                 .ToList();
+
             if (cachedTitles.Count > 0)
                 selectedTitle = cachedTitles[0];
         }
@@ -62,6 +62,7 @@ namespace RoyalTitlesRoomSettings
         private static void DrawBottomBar(Rect rect)
         {
             Widgets.DrawLineHorizontal(rect.x, rect.y, rect.width);
+
             var btnRect = new Rect(rect.x + 4f, rect.y + 4f, 220f, rect.height - 8f);
             if (Widgets.ButtonText(btnRect, "RTRS.ResetAll".Translate()))
             {
@@ -73,6 +74,13 @@ namespace RoyalTitlesRoomSettings
                         RequirementsApplier.PatchAll();
                     }));
             }
+
+            var helpBtnRect = new Rect(rect.xMax - 44f, rect.y + 4f, 40f, rect.height - 8f);
+            if (Widgets.ButtonText(helpBtnRect, "?"))
+            {
+                Find.WindowStack.Add(new RoomRequirementsHelpWindow());
+            }
+            TooltipHandler.TipRegion(helpBtnRect, "RTRS.HelpButtonTooltip".Translate());
         }
 
         private static void DrawMainArea(Rect rect)
@@ -82,6 +90,7 @@ namespace RoyalTitlesRoomSettings
                 rect.width - LeftPanelWidth - 6f, rect.height);
 
             Widgets.DrawLineVertical(leftRect.xMax, leftRect.y, leftRect.height);
+
             DrawLeftPanel(leftRect);
             DrawRightPanel(rightRect);
         }
@@ -99,6 +108,7 @@ namespace RoyalTitlesRoomSettings
 
             var viewRect = new Rect(0f, 0f, rect.width - 16f, totalHeight + 10f);
             Widgets.BeginScrollView(rect, ref leftScrollPos, viewRect);
+
             float y = 4f;
             for (int i = 0; i < cachedTitles.Count; i++)
             {
@@ -107,6 +117,7 @@ namespace RoyalTitlesRoomSettings
                 DrawTitleRow(rowRect, cachedTitles[i]);
                 y += h;
             }
+
             Widgets.EndScrollView();
         }
 
@@ -134,7 +145,6 @@ namespace RoyalTitlesRoomSettings
             if (Widgets.ButtonInvisible(rect))
             {
                 selectedTitle = title;
-                activeTabId = GetVisibleTabs().First().Id;
             }
 
             string fullLabel = GetTitleRowLabel(title);
@@ -164,7 +174,7 @@ namespace RoyalTitlesRoomSettings
 
             string tooltip = title.GetLabelCapForBothGenders();
             if (!string.IsNullOrEmpty(title.description))
-                tooltip += "\n\n" + title.description;
+                tooltip += "\n" + title.description;
             TooltipHandler.TipRegion(rect, tooltip);
         }
 
@@ -176,42 +186,47 @@ namespace RoyalTitlesRoomSettings
                 return;
             }
 
-            var titleRect = new Rect(rect.x, rect.y, rect.width, TitleHeaderHeight);
-            var tabBarRect = new Rect(rect.x, titleRect.yMax, rect.width, TabBarHeight);
+            var tabBarRect = new Rect(rect.x, rect.y, rect.width, TabBarHeight);
             var contentRect = new Rect(rect.x, tabBarRect.yMax + 2f,
                 rect.width, rect.yMax - tabBarRect.yMax - 2f);
 
-            DrawTitleHeader(titleRect);
             DrawTabBar(tabBarRect);
             DrawTabContent(contentRect);
         }
 
-        private static void DrawTitleHeader(Rect rect)
-        {
-            Text.Font = GameFont.Medium;
-            Text.Anchor = TextAnchor.MiddleLeft;
-            Widgets.Label(rect, selectedTitle.GetLabelCapForBothGenders());
-            Text.Anchor = TextAnchor.UpperLeft;
-            Text.Font = GameFont.Small;
-        }
-
         private static void DrawTabBar(Rect rect)
         {
+            var visibleTabs = GetVisibleTabs().ToList();
             float x = rect.x;
-            foreach (var tab in GetVisibleTabs())
+
+            foreach (var tab in visibleTabs)
             {
                 string label = tab.LabelKey.Translate();
-                float w = Text.CalcSize(label).x + 20f;
+                float w = Text.CalcSize(label).x + 24f;
                 var tabRect = new Rect(x, rect.y, w, rect.height - 2f);
 
-                if (activeTabId == tab.Id)
-                    Widgets.DrawBoxSolid(tabRect, new Color(0.4f, 0.6f, 0.9f, 0.3f));
+                bool isActive = activeTabId == tab.Id;
 
-                if (Widgets.ButtonText(tabRect, label))
+                if (isActive)
+                {
+                    Widgets.DrawAltRect(tabRect);
+                    Widgets.DrawLineHorizontal(tabRect.x, tabRect.y, tabRect.width);
+                    Widgets.DrawLineHorizontal(tabRect.x, tabRect.yMax, tabRect.width);
+                    Widgets.DrawLineVertical(tabRect.x, tabRect.y, tabRect.height);
+                    Widgets.DrawLineVertical(tabRect.xMax, tabRect.y, tabRect.height);
+                }
+                else
+                {
+                    Widgets.DrawHighlightIfMouseover(tabRect);
+                }
+
+                if (Widgets.ButtonText(tabRect, label, drawBackground: false))
                     activeTabId = tab.Id;
 
                 x += w + 2f;
             }
+
+            Widgets.DrawLineHorizontal(rect.x, rect.yMax, rect.width);
         }
 
         private static void DrawTabContent(Rect rect)

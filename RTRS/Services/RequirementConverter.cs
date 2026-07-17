@@ -28,6 +28,7 @@ namespace RoyalTitlesRoomSettings.Services
             RegisterType(typeof(RoomRequirement_AllThingsAreGlowing));
             RegisterType(typeof(RoomRequirement_AllThingsAnyOfAreGlowing));
             RegisterType(typeof(RoomRequirement_HasAssignedThroneAnyOf));
+
             var instrumentType = Type.GetType("VFEEmpire.RoomRequirement_InstrumentSpace, VFEEmpire");
             if (instrumentType != null)
                 RegisterType(instrumentType);
@@ -39,22 +40,25 @@ namespace RoyalTitlesRoomSettings.Services
                 TypeCache[type.FullName] = type;
         }
 
-        private static Type GetTypeByName(string fullName)
+        internal static Type GetTypeByName(string fullName)
         {
             if (TypeCache.TryGetValue(fullName, out var type))
                 return type;
+
             type = Type.GetType(fullName + ", Assembly-CSharp");
             if (type != null)
             {
                 TypeCache[fullName] = type;
                 return type;
             }
+
             type = Type.GetType(fullName + ", VFEEmpire");
             if (type != null)
             {
                 TypeCache[fullName] = type;
                 return type;
             }
+
             return null;
         }
 
@@ -62,6 +66,7 @@ namespace RoyalTitlesRoomSettings.Services
         {
             if (FieldCache.TryGetValue(type, out var fields))
                 return fields;
+
             fields = type.GetFields(BindingFlags.Public | BindingFlags.Instance).ToList();
             FieldCache[type] = fields;
             return fields;
@@ -71,6 +76,7 @@ namespace RoyalTitlesRoomSettings.Services
         {
             if (req == null)
                 return null;
+
             var dto = new SerializableRoomRequirement
             {
                 TypeName = req.GetType().FullName,
@@ -111,6 +117,7 @@ namespace RoyalTitlesRoomSettings.Services
                     var list = value as IList;
                     if (list == null || list.Count == 0)
                         continue;
+
                     var elemType = field.FieldType.GetGenericArguments()[0];
                     if (elemType == typeof(ThingDef))
                     {
@@ -139,6 +146,7 @@ namespace RoyalTitlesRoomSettings.Services
         {
             if (dto == null)
                 return null;
+
             var type = GetTypeByName(dto.TypeName);
             if (type == null)
             {
@@ -175,6 +183,7 @@ namespace RoyalTitlesRoomSettings.Services
                         value = dto.Impressiveness;
                     else if (field.Name == "count")
                         value = dto.Count;
+
                     if (value.HasValue)
                         field.SetValue(req, value.Value);
                 }
@@ -245,12 +254,15 @@ namespace RoyalTitlesRoomSettings.Services
         {
             if (courtReq == null)
                 return null;
+
             var type = courtReq.GetType();
             var countField = type.GetField("count");
             var minField = type.GetField("minTitle");
             var maxField = type.GetField("maxTitle");
+
             if (countField == null || minField == null || maxField == null)
                 return null;
+
             var dto = new SerializableCourtRequirement
             {
                 Count = (int)countField.GetValue(courtReq),
@@ -258,6 +270,7 @@ namespace RoyalTitlesRoomSettings.Services
                 MaxTitleDefName = (maxField.GetValue(courtReq) as RoyalTitleDef)?.defName,
                 Enabled = true
             };
+
             return dto;
         }
 
@@ -265,25 +278,31 @@ namespace RoyalTitlesRoomSettings.Services
         {
             if (dto == null || courtType == null)
                 return null;
+
             var obj = Activator.CreateInstance(courtType);
             var countField = courtType.GetField("count");
             var minField = courtType.GetField("minTitle");
             var maxField = courtType.GetField("maxTitle");
+
             if (countField == null || minField == null || maxField == null)
                 return null;
+
             countField.SetValue(obj, dto.Count);
+
             if (!string.IsNullOrEmpty(dto.MinTitleDefName))
             {
                 var minTitle = DefDatabase<RoyalTitleDef>.GetNamedSilentFail(dto.MinTitleDefName);
                 if (minTitle != null)
                     minField.SetValue(obj, minTitle);
             }
+
             if (!string.IsNullOrEmpty(dto.MaxTitleDefName))
             {
                 var maxTitle = DefDatabase<RoyalTitleDef>.GetNamedSilentFail(dto.MaxTitleDefName);
                 if (maxTitle != null)
                     maxField.SetValue(obj, maxTitle);
             }
+
             return obj;
         }
 
@@ -292,12 +311,14 @@ namespace RoyalTitlesRoomSettings.Services
             var result = new List<SerializableCourtRequirement>();
             if (courtList == null)
                 return result;
+
             foreach (var item in courtList)
             {
                 var dto = CourtToDto(item);
                 if (dto != null)
                     result.Add(dto);
             }
+
             return result;
         }
 
@@ -305,16 +326,20 @@ namespace RoyalTitlesRoomSettings.Services
         {
             if (courtType == null)
                 return null;
+
             var listType = typeof(List<>).MakeGenericType(courtType);
             var list = (IList)Activator.CreateInstance(listType);
+
             foreach (var dto in dtos)
             {
                 if (!dto.Enabled)
                     continue;
+
                 var obj = CourtFromDto(dto, courtType);
                 if (obj != null)
                     list.Add(obj);
             }
+
             return list;
         }
     }

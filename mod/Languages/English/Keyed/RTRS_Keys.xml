@@ -31,7 +31,8 @@
 	<RTRS.None>none</RTRS.None>
 	<RTRS.CourtRequirement>From {0} to {1}: {2} pcs</RTRS.CourtRequirement>
 	<RTRS.SearchResults>Found: {0} of {1}</RTRS.SearchResults>
-	<!-- Requirement types (used in dropdowns and short descriptions) -->
+	<RTRS.HelpButtonTooltip>Room requirements reference</RTRS.HelpButtonTooltip>
+	<!-- Requirement types -->
 	<RTRS.ReqType_Area>Room area</RTRS.ReqType_Area>
 	<RTRS.ReqType_Impressiveness>Room impressiveness</RTRS.ReqType_Impressiveness>
 	<RTRS.ReqType_Thing>Thing presence</RTRS.ReqType_Thing>
@@ -45,7 +46,14 @@
 	<RTRS.ReqType_AllThingsAnyOfAreGlowing>All things (from list) glowing</RTRS.ReqType_AllThingsAnyOfAreGlowing>
 	<RTRS.ReqType_HasAssignedThroneAnyOf>Assigned throne (any of)</RTRS.ReqType_HasAssignedThroneAnyOf>
 	<RTRS.ReqType_InstrumentSpace>Dance space</RTRS.ReqType_InstrumentSpace>
-	<!-- Disabling precepts (Ideology) -->
+	<!-- Instrument space description -->
+	<RTRS.InstrumentSpace_Desc>Requires free dance floor space in front of every musical instrument in the room.</RTRS.InstrumentSpace_Desc>
+	<RTRS.InstrumentSpace_Sizes>The game calculates a rectangular dance zone in front of each instrument. Size depends on type:</RTRS.InstrumentSpace_Sizes>
+	<RTRS.InstrumentSpace_HarpHarpsichord>Harp, harpsichord: 7 × 7</RTRS.InstrumentSpace_HarpHarpsichord>
+	<RTRS.InstrumentSpace_Piano>Piano: 9 × 9</RTRS.InstrumentSpace_Piano>
+	<RTRS.InstrumentSpace_Organ>Pipe organ: 11 × 11</RTRS.InstrumentSpace_Organ>
+	<RTRS.InstrumentSpace_Rules>All cells in the zone must be: within the map, in the same room (not crossing walls/doors), and passable (no walls, doors, furniture, columns or other obstacles). If even one cell of any instrument is blocked or outside the room — the requirement fails for the entire room.</RTRS.InstrumentSpace_Rules>
+	<!-- Disabling precepts -->
 	<RTRS.PreceptsButton>Disable by precepts</RTRS.PreceptsButton>
 	<RTRS.PreceptsStatusSet>set: {0}</RTRS.PreceptsStatusSet>
 	<RTRS.PreceptsStatusNotSet>not set</RTRS.PreceptsStatusNotSet>
@@ -53,7 +61,122 @@
 	<RTRS.DisablingPreceptsTitle>Disabling precepts</RTRS.DisablingPreceptsTitle>
 	<RTRS.DisablingPreceptsDesc>If the pawn's ideoligion contains any of these precepts, the requirement is disabled for them. Requires Ideology DLC.</RTRS.DisablingPreceptsDesc>
 	<RTRS.PreceptsEmpty>no precepts configured</RTRS.PreceptsEmpty>
-	<!-- Additional for custom display (tooltip and list) -->
+	<!-- Additional display -->
 	<RTRS.Things>Things</RTRS.Things>
 	<RTRS.OriginalType>Original type</RTRS.OriginalType>
+	<!-- Help window UI -->
+	<RTRS.HelpWindowTitle>Room Requirements Reference</RTRS.HelpWindowTitle>
+	<RTRS.HelpNoRoomSelected>Select a room type</RTRS.HelpNoRoomSelected>
+	<RTRS.HelpRulesHeader>Requirements</RTRS.HelpRulesHeader>
+	<RTRS.HelpExamples>Examples</RTRS.HelpExamples>
+	<RTRS.HelpMinCount>Minimum: {0} {1}</RTRS.HelpMinCount>
+	<RTRS.HelpMaxCount>Maximum: {0}</RTRS.HelpMaxCount>
+	<RTRS.HelpWorkTableRole>Work table role</RTRS.HelpWorkTableRole>
+	<RTRS.HelpAllowedRole>Allowed role</RTRS.HelpAllowedRole>
+	<RTRS.HelpAllowedThings>Allowed items</RTRS.HelpAllowedThings>
+	<RTRS.HelpOr>or</RTRS.HelpOr>
+	<!-- Room descriptions -->
+	<RTRS.RoomDesc_Bedroom>A private room for sleeping and resting.</RTRS.RoomDesc_Bedroom>
+	<RTRS.RoomDesc_ThroneRoom>A formal room where a noble holds court on their throne.</RTRS.RoomDesc_ThroneRoom>
+	<RTRS.RoomDesc_DiningRoom>A room with a table for eating meals.</RTRS.RoomDesc_DiningRoom>
+	<RTRS.RoomDesc_RecRoom>A room with entertainment items for relaxation.</RTRS.RoomDesc_RecRoom>
+	<RTRS.RoomDesc_Hospital>A medical facility for treating the sick and injured.</RTRS.RoomDesc_Hospital>
+	<RTRS.RoomDesc_PrisonCell>A cell for holding a single prisoner.</RTRS.RoomDesc_PrisonCell>
+	<RTRS.RoomDesc_PrisonBarracks>A shared cell for holding multiple prisoners.</RTRS.RoomDesc_PrisonBarracks>
+	<RTRS.RoomDesc_Barn>A shelter for animals.</RTRS.RoomDesc_Barn>
+	<RTRS.RoomDesc_Barracks>A shared sleeping quarters for multiple colonists.</RTRS.RoomDesc_Barracks>
+	<RTRS.RoomDesc_Tomb>A burial chamber for the dead.</RTRS.RoomDesc_Tomb>
+	<RTRS.RoomDesc_StoreRoom>A room for storing items.</RTRS.RoomDesc_StoreRoom>
+	<RTRS.RoomDesc_Kitchen>A room for preparing meals.</RTRS.RoomDesc_Kitchen>
+	<RTRS.RoomDesc_Workshop>A room for crafting items.</RTRS.RoomDesc_Workshop>
+	<RTRS.RoomDesc_Laboratory>A room for scientific research and experiments.</RTRS.RoomDesc_Laboratory>
+	<RTRS.RoomDesc_WorshipRoom>A sacred room for religious ceremonies.</RTRS.RoomDesc_WorshipRoom>
+	<RTRS.RoomDesc_Nursery>A room for caring for infants and children.</RTRS.RoomDesc_Nursery>
+	<RTRS.RoomDesc_Playroom>A room for children to play.</RTRS.RoomDesc_Playroom>
+	<RTRS.RoomDesc_Classroom>A room for teaching and learning.</RTRS.RoomDesc_Classroom>
+	<RTRS.RoomDesc_DeathrestChamber>A chamber for deathrest caskets.</RTRS.RoomDesc_DeathrestChamber>
+	<RTRS.RoomDesc_ContainmentCell>A secure cell for containing entities.</RTRS.RoomDesc_ContainmentCell>
+	<RTRS.RoomDesc_CeremonialChamber>A room for psychic rituals.</RTRS.RoomDesc_CeremonialChamber>
+	<RTRS.RoomDesc_Ballroom>A grand hall for dancing and social events.</RTRS.RoomDesc_Ballroom>
+	<RTRS.RoomDesc_Gallery>A room for displaying art.</RTRS.RoomDesc_Gallery>
+	<!-- Rule labels -->
+	<RTRS.Rule_RequiredHumanBed>Requires a human bed</RTRS.Rule_RequiredHumanBed>
+	<RTRS.Rule_RequiredHumanBed_Desc>The room must contain at least one human-sized bed that is not medical and not assigned to prisoners.</RTRS.Rule_RequiredHumanBed_Desc>
+	<RTRS.Rule_BedroomLogic>Bedroom ownership logic</RTRS.Rule_BedroomLogic>
+	<RTRS.Rule_BedroomLogic_Desc>Beds must belong to members of the same family or couple. Children may sleep with parents.</RTRS.Rule_BedroomLogic_Desc>
+	<RTRS.Rule_RequiredThrone>Requires a throne</RTRS.Rule_RequiredThrone>
+	<RTRS.Rule_RequiredThrone_Desc>The room must contain at least one throne.</RTRS.Rule_RequiredThrone_Desc>
+	<RTRS.Rule_MustBeIndoors>Must be indoors</RTRS.Rule_MustBeIndoors>
+	<RTRS.Rule_MustBeIndoors_Desc>The room must be enclosed (not outdoors).</RTRS.Rule_MustBeIndoors_Desc>
+	<RTRS.Rule_RequiredEatSurface>Requires an eating surface</RTRS.Rule_RequiredEatSurface>
+	<RTRS.Rule_RequiredEatSurface_Desc>The room must contain at least one table or surface where pawns can eat.</RTRS.Rule_RequiredEatSurface_Desc>
+	<RTRS.Rule_RequiredJoyGiver>Requires entertainment</RTRS.Rule_RequiredJoyGiver>
+	<RTRS.Rule_RequiredJoyGiver_Desc>The room must contain at least one item that provides joy.</RTRS.Rule_RequiredJoyGiver_Desc>
+	<RTRS.Rule_RequiredMedicalBed>Requires a medical bed</RTRS.Rule_RequiredMedicalBed>
+	<RTRS.Rule_RequiredMedicalBed_Desc>The room must contain at least one medical bed not assigned to prisoners.</RTRS.Rule_RequiredMedicalBed_Desc>
+	<RTRS.Rule_RequiredPrisonerBed>Requires exactly 1 prisoner bed</RTRS.Rule_RequiredPrisonerBed>
+	<RTRS.Rule_RequiredPrisonerBed_Desc>The room must contain exactly one bed assigned to a prisoner.</RTRS.Rule_RequiredPrisonerBed_Desc>
+	<RTRS.Rule_RequiredPrisonerBeds>Requires prisoner beds</RTRS.Rule_RequiredPrisonerBeds>
+	<RTRS.Rule_RequiredPrisonerBeds_Desc>The room must contain at least 2 beds assigned to prisoners.</RTRS.Rule_RequiredPrisonerBeds_Desc>
+	<RTRS.Rule_RequiredAnimalBed>Requires an animal bed</RTRS.Rule_RequiredAnimalBed>
+	<RTRS.Rule_RequiredAnimalBed_Desc>The room must contain at least one bed for animals.</RTRS.Rule_RequiredAnimalBed_Desc>
+	<RTRS.Rule_RequiredHumanBeds>Requires human beds</RTRS.Rule_RequiredHumanBeds>
+	<RTRS.Rule_RequiredHumanBeds_Desc>The room must contain at least 2 human beds that are not medical and not assigned to prisoners.</RTRS.Rule_RequiredHumanBeds_Desc>
+	<RTRS.Rule_NotBedroom>Must NOT be a bedroom</RTRS.Rule_NotBedroom>
+	<RTRS.Rule_NotBedroom_Desc>Beds must not belong to the same family or couple, otherwise the room counts as a bedroom.</RTRS.Rule_NotBedroom_Desc>
+	<RTRS.Rule_RequiredSarcophagus>Requires a sarcophagus</RTRS.Rule_RequiredSarcophagus>
+	<RTRS.Rule_RequiredSarcophagus_Desc>The room must contain at least one sarcophagus.</RTRS.Rule_RequiredSarcophagus_Desc>
+	<RTRS.Rule_RequiredStorage>Requires storage</RTRS.Rule_RequiredStorage>
+	<RTRS.Rule_RequiredStorage_Desc>The room must contain at least one storage building (shelf, stockpile zone, etc.).</RTRS.Rule_RequiredStorage_Desc>
+	<RTRS.Rule_RequiredKitchen>Requires a cooking station</RTRS.Rule_RequiredKitchen>
+	<RTRS.Rule_RequiredKitchen_Desc>The room must contain at least one work table that can produce edible food.</RTRS.Rule_RequiredKitchen_Desc>
+	<RTRS.Rule_RequiredWorkshop>Requires a workshop table</RTRS.Rule_RequiredWorkshop>
+	<RTRS.Rule_RequiredWorkshop_Desc>The room must contain at least one work table with the Workshop role.</RTRS.Rule_RequiredWorkshop_Desc>
+	<RTRS.Rule_RequiredLaboratory>Requires a laboratory table</RTRS.Rule_RequiredLaboratory>
+	<RTRS.Rule_RequiredLaboratory_Desc>The room must contain at least one work table with the Laboratory role.</RTRS.Rule_RequiredLaboratory_Desc>
+	<RTRS.Rule_RequiredAltar>Requires an altar</RTRS.Rule_RequiredAltar>
+	<RTRS.Rule_RequiredAltar_Desc>The room must contain at least one altar linked to the colony's ideoligion.</RTRS.Rule_RequiredAltar_Desc>
+	<RTRS.Rule_RequiredChildBeds>Requires children's beds</RTRS.Rule_RequiredChildBeds>
+	<RTRS.Rule_RequiredChildBeds_Desc>The room must contain at least 2 small beds suitable for children.</RTRS.Rule_RequiredChildBeds_Desc>
+	<RTRS.Rule_ForbiddenHumanBeds>No human beds allowed</RTRS.Rule_ForbiddenHumanBeds>
+	<RTRS.Rule_ForbiddenHumanBeds_Desc>The room must not contain any human-sized beds.</RTRS.Rule_ForbiddenHumanBeds_Desc>
+	<RTRS.Rule_RequiredBabyPlay>Requires baby play items</RTRS.Rule_RequiredBabyPlay>
+	<RTRS.Rule_RequiredBabyPlay_Desc>The room must contain at least one item that stimulates baby play.</RTRS.Rule_RequiredBabyPlay_Desc>
+	<RTRS.Rule_RequiredSchoolFurniture>Requires school furniture</RTRS.Rule_RequiredSchoolFurniture>
+	<RTRS.Rule_RequiredSchoolFurniture_Desc>The room must contain at least one school desk or blackboard.</RTRS.Rule_RequiredSchoolFurniture_Desc>
+	<RTRS.Rule_RequiredDeathrest>Requires deathrest equipment</RTRS.Rule_RequiredDeathrest>
+	<RTRS.Rule_RequiredDeathrest_Desc>The room must contain at least one deathrest casket or deathrest-bindable item.</RTRS.Rule_RequiredDeathrest_Desc>
+	<RTRS.Rule_RequiredEntityHolder>Requires an entity holder</RTRS.Rule_RequiredEntityHolder>
+	<RTRS.Rule_RequiredEntityHolder_Desc>The room must contain at least one entity containment device.</RTRS.Rule_RequiredEntityHolder_Desc>
+	<RTRS.Rule_RequiredPsychicRitualSpot>Requires a psychic ritual spot</RTRS.Rule_RequiredPsychicRitualSpot>
+	<RTRS.Rule_RequiredPsychicRitualSpot_Desc>The room must contain at least one psychic ritual spot.</RTRS.Rule_RequiredPsychicRitualSpot_Desc>
+	<RTRS.Rule_ForbiddenEntityHolder>No entity holders</RTRS.Rule_ForbiddenEntityHolder>
+	<RTRS.Rule_ForbiddenEntityHolder_Desc>The room must not contain entity holders such as sarcophagi or cryptosleep caskets.</RTRS.Rule_ForbiddenEntityHolder_Desc>
+	<RTRS.Rule_ForbiddenBeds>No beds</RTRS.Rule_ForbiddenBeds>
+	<RTRS.Rule_ForbiddenBeds_Desc>The room must not contain any beds.</RTRS.Rule_ForbiddenBeds_Desc>
+	<RTRS.Rule_ForbiddenThrones>No thrones</RTRS.Rule_ForbiddenThrones>
+	<RTRS.Rule_ForbiddenThrones_Desc>The room must not contain any thrones.</RTRS.Rule_ForbiddenThrones_Desc>
+	<RTRS.Rule_ForbiddenWorkTables>No work tables</RTRS.Rule_ForbiddenWorkTables>
+	<RTRS.Rule_ForbiddenWorkTables_Desc>The room must not contain any work tables.</RTRS.Rule_ForbiddenWorkTables_Desc>
+	<RTRS.Rule_ForbiddenOtherWorkTableRole>Work table role restriction</RTRS.Rule_ForbiddenOtherWorkTableRole>
+	<RTRS.Rule_ForbiddenOtherWorkTableRole_Desc>If the room contains a work table, its role must match this room type.</RTRS.Rule_ForbiddenOtherWorkTableRole_Desc>
+	<RTRS.Rule_RequiredMusicalInstrument>Requires a musical instrument</RTRS.Rule_RequiredMusicalInstrument>
+	<RTRS.Rule_RequiredMusicalInstrument_Desc>The room must contain at least one musical instrument.</RTRS.Rule_RequiredMusicalInstrument_Desc>
+	<RTRS.Rule_RequiredArt>Requires art pieces</RTRS.Rule_RequiredArt>
+	<RTRS.Rule_RequiredArt_Desc>The room must contain at least 4 pieces of art (sculptures or paintings).</RTRS.Rule_RequiredArt_Desc>
+	<!-- Rule descriptions -->
+	<RTRS.BedDesc_HumanBed>Human-sized bed, not medical, not assigned to prisoners.</RTRS.BedDesc_HumanBed>
+	<RTRS.BedDesc_MedicalBed>Medical bed for treating patients.</RTRS.BedDesc_MedicalBed>
+	<RTRS.BedDesc_PrisonerBed>Bed assigned to prisoners.</RTRS.BedDesc_PrisonerBed>
+	<RTRS.BedDesc_AnimalBed>Bed for animals.</RTRS.BedDesc_AnimalBed>
+	<RTRS.BedDesc_ChildBed>Small bed suitable for children.</RTRS.BedDesc_ChildBed>
+	<RTRS.BedroomLogicDesc>Beds must belong to members of the same family or couple. Children may sleep with parents. If beds belong to unrelated colonists, the room will not count as a bedroom.</RTRS.BedroomLogicDesc>
+	<RTRS.BarracksLogicDesc>Beds must NOT belong to members of the same family or couple. If all beds belong to one family, the room will be counted as a bedroom instead of barracks.</RTRS.BarracksLogicDesc>
+	<!-- Class labels -->
+	<RTRS.Class_Throne>throne</RTRS.Class_Throne>
+	<RTRS.Class_HumanBed>human bed</RTRS.Class_HumanBed>
+	<RTRS.Class_Bed>bed</RTRS.Class_Bed>
+	<RTRS.Class_WorkTable>work table</RTRS.Class_WorkTable>
+	<RTRS.Class_MusicalInstrument>musical instrument</RTRS.Class_MusicalInstrument>
+	<RTRS.Class_Art>art piece</RTRS.Class_Art>
 </LanguageData>

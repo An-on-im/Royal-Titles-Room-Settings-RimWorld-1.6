@@ -31,7 +31,8 @@
 	<RTRS.None>нет</RTRS.None>
 	<RTRS.CourtRequirement>От {0} до {1}: {2} шт.</RTRS.CourtRequirement>
 	<RTRS.SearchResults>Найдено: {0} из {1}</RTRS.SearchResults>
-	<!-- Типы требований (используются в выпадающих списках и кратких описаниях) -->
+	<RTRS.HelpButtonTooltip>Справочник требований к комнатам</RTRS.HelpButtonTooltip>
+	<!-- Типы требований -->
 	<RTRS.ReqType_Area>Площадь комнаты</RTRS.ReqType_Area>
 	<RTRS.ReqType_Impressiveness>Впечатление комнаты</RTRS.ReqType_Impressiveness>
 	<RTRS.ReqType_Thing>Наличие вещи</RTRS.ReqType_Thing>
@@ -45,7 +46,14 @@
 	<RTRS.ReqType_AllThingsAnyOfAreGlowing>Все вещи (из списка) светятся</RTRS.ReqType_AllThingsAnyOfAreGlowing>
 	<RTRS.ReqType_HasAssignedThroneAnyOf>Назначенный трон (любой из)</RTRS.ReqType_HasAssignedThroneAnyOf>
 	<RTRS.ReqType_InstrumentSpace>Пространство для танцев</RTRS.ReqType_InstrumentSpace>
-	<!-- Отключение по доктринам (Ideology) -->
+	<!-- Подробное описание InstrumentSpace -->
+	<RTRS.InstrumentSpace_Desc>Требует свободное пространство для танцев перед каждым музыкальным инструментом в комнате.</RTRS.InstrumentSpace_Desc>
+	<RTRS.InstrumentSpace_Sizes>Игра рассчитывает прямоугольную зону танцпола строго перед инструментом. Размер зависит от типа:</RTRS.InstrumentSpace_Sizes>
+	<RTRS.InstrumentSpace_HarpHarpsichord>Арфа, клавесин: 7 × 7</RTRS.InstrumentSpace_HarpHarpsichord>
+	<RTRS.InstrumentSpace_Piano>Пианино: 9 × 9</RTRS.InstrumentSpace_Piano>
+	<RTRS.InstrumentSpace_Organ>Имперский орган: 11 × 11</RTRS.InstrumentSpace_Organ>
+	<RTRS.InstrumentSpace_Rules>Все клетки зоны должны: находиться в пределах карты, в той же комнате (не выходить за стены/двери), быть проходимыми (без стен, дверей, мебели, колонн и других препятствий). Если хотя бы одна клетка любого инструмента заблокирована или находится вне комнаты — требование не выполнено для всей комнаты.</RTRS.InstrumentSpace_Rules>
+	<!-- Отключение по доктринам -->
 	<RTRS.PreceptsButton>Отключение по доктринам</RTRS.PreceptsButton>
 	<RTRS.PreceptsStatusSet>задано: {0} шт.</RTRS.PreceptsStatusSet>
 	<RTRS.PreceptsStatusNotSet>не задано</RTRS.PreceptsStatusNotSet>
@@ -53,7 +61,122 @@
 	<RTRS.DisablingPreceptsTitle>Отключающие доктрины</RTRS.DisablingPreceptsTitle>
 	<RTRS.DisablingPreceptsDesc>Если идеология пешки содержит любую из этих доктрин, требование для неё отключается. Требуется DLC Ideology.</RTRS.DisablingPreceptsDesc>
 	<RTRS.PreceptsEmpty>доктрины не заданы</RTRS.PreceptsEmpty>
-	<!-- Дополнительно для кастомного отображения (тултип и список) -->
+	<!-- Дополнительно для отображения -->
 	<RTRS.Things>Вещи</RTRS.Things>
 	<RTRS.OriginalType>Оригинальный тип</RTRS.OriginalType>
+	<!-- UI окна справки -->
+	<RTRS.HelpWindowTitle>Справочник требований к комнатам</RTRS.HelpWindowTitle>
+	<RTRS.HelpNoRoomSelected>Выберите тип комнаты</RTRS.HelpNoRoomSelected>
+	<RTRS.HelpRulesHeader>Требования</RTRS.HelpRulesHeader>
+	<RTRS.HelpExamples>Примеры</RTRS.HelpExamples>
+	<RTRS.HelpMinCount>Минимум: {0} {1}</RTRS.HelpMinCount>
+	<RTRS.HelpMaxCount>Максимум: {0}</RTRS.HelpMaxCount>
+	<RTRS.HelpWorkTableRole>Роль рабочего стола</RTRS.HelpWorkTableRole>
+	<RTRS.HelpAllowedRole>Разрешённая роль</RTRS.HelpAllowedRole>
+	<RTRS.HelpAllowedThings>Разрешённые предметы</RTRS.HelpAllowedThings>
+	<RTRS.HelpOr>или</RTRS.HelpOr>
+	<!-- Описания комнат -->
+	<RTRS.RoomDesc_Bedroom>Личная комната для сна и отдыха.</RTRS.RoomDesc_Bedroom>
+	<RTRS.RoomDesc_ThroneRoom>Официальная комната, где дворянин принимает посетителей на троне.</RTRS.RoomDesc_ThroneRoom>
+	<RTRS.RoomDesc_DiningRoom>Комната со столом для приёма пищи.</RTRS.RoomDesc_DiningRoom>
+	<RTRS.RoomDesc_RecRoom>Комната с предметами для развлечений и отдыха.</RTRS.RoomDesc_RecRoom>
+	<RTRS.RoomDesc_Hospital>Медицинское помещение для лечения больных и раненых.</RTRS.RoomDesc_Hospital>
+	<RTRS.RoomDesc_PrisonCell>Камера для содержания одного заключённого.</RTRS.RoomDesc_PrisonCell>
+	<RTRS.RoomDesc_PrisonBarracks>Общая камера для содержания нескольких заключённых.</RTRS.RoomDesc_PrisonBarracks>
+	<RTRS.RoomDesc_Barn>Укрытие для животных.</RTRS.RoomDesc_Barn>
+	<RTRS.RoomDesc_Barracks>Общая спальня для нескольких колонистов.</RTRS.RoomDesc_Barracks>
+	<RTRS.RoomDesc_Tomb>Погребальная камера для мёртвых.</RTRS.RoomDesc_Tomb>
+	<RTRS.RoomDesc_StoreRoom>Комната для хранения предметов.</RTRS.RoomDesc_StoreRoom>
+	<RTRS.RoomDesc_Kitchen>Комната для приготовления пищи.</RTRS.RoomDesc_Kitchen>
+	<RTRS.RoomDesc_Workshop>Мастерская для изготовления предметов.</RTRS.RoomDesc_Workshop>
+	<RTRS.RoomDesc_Laboratory>Лаборатория для научных исследований.</RTRS.RoomDesc_Laboratory>
+	<RTRS.RoomDesc_WorshipRoom>Священная комната для религиозных обрядов.</RTRS.RoomDesc_WorshipRoom>
+	<RTRS.RoomDesc_Nursery>Комната для ухода за младенцами и детьми.</RTRS.RoomDesc_Nursery>
+	<RTRS.RoomDesc_Playroom>Комната для детских игр.</RTRS.RoomDesc_Playroom>
+	<RTRS.RoomDesc_Classroom>Комната для обучения.</RTRS.RoomDesc_Classroom>
+	<RTRS.RoomDesc_DeathrestChamber>Камера для саркофагов смертного сна.</RTRS.RoomDesc_DeathrestChamber>
+	<RTRS.RoomDesc_ContainmentCell>Защищённая камера для содержания сущностей.</RTRS.RoomDesc_ContainmentCell>
+	<RTRS.RoomDesc_CeremonialChamber>Комната для психических ритуалов.</RTRS.RoomDesc_CeremonialChamber>
+	<RTRS.RoomDesc_Ballroom>Большой зал для танцев и светских мероприятий.</RTRS.RoomDesc_Ballroom>
+	<RTRS.RoomDesc_Gallery>Комната для демонстрации произведений искусства.</RTRS.RoomDesc_Gallery>
+	<!-- Названия правил -->
+	<RTRS.Rule_RequiredHumanBed>Требуется человеческая кровать</RTRS.Rule_RequiredHumanBed>
+	<RTRS.Rule_RequiredHumanBed_Desc>В комнате должна быть хотя бы одна кровать человеческого размера, не медицинская и не назначенная заключённым.</RTRS.Rule_RequiredHumanBed_Desc>
+	<RTRS.Rule_BedroomLogic>Логика владения спальней</RTRS.Rule_BedroomLogic>
+	<RTRS.Rule_BedroomLogic_Desc>Кровати должны принадлежать членам одной семьи или пары. Дети могут спать с родителями.</RTRS.Rule_BedroomLogic_Desc>
+	<RTRS.Rule_RequiredThrone>Требуется трон</RTRS.Rule_RequiredThrone>
+	<RTRS.Rule_RequiredThrone_Desc>В комнате должен быть хотя бы один трон.</RTRS.Rule_RequiredThrone_Desc>
+	<RTRS.Rule_MustBeIndoors>Должна быть в помещении</RTRS.Rule_MustBeIndoors>
+	<RTRS.Rule_MustBeIndoors_Desc>Комната должна быть закрытой (не на улице).</RTRS.Rule_MustBeIndoors_Desc>
+	<RTRS.Rule_RequiredEatSurface>Требуется обеденная поверхность</RTRS.Rule_RequiredEatSurface>
+	<RTRS.Rule_RequiredEatSurface_Desc>В комнате должен быть хотя бы один стол или поверхность, за которой можно есть.</RTRS.Rule_RequiredEatSurface_Desc>
+	<RTRS.Rule_RequiredJoyGiver>Требуется развлечение</RTRS.Rule_RequiredJoyGiver>
+	<RTRS.Rule_RequiredJoyGiver_Desc>В комнате должен быть хотя бы один предмет, дающий радость.</RTRS.Rule_RequiredJoyGiver_Desc>
+	<RTRS.Rule_RequiredMedicalBed>Требуется медицинская кровать</RTRS.Rule_RequiredMedicalBed>
+	<RTRS.Rule_RequiredMedicalBed_Desc>В комнате должна быть хотя бы одна медицинская кровать, не назначенная заключённым.</RTRS.Rule_RequiredMedicalBed_Desc>
+	<RTRS.Rule_RequiredPrisonerBed>Требуется ровно 1 кровать заключённого</RTRS.Rule_RequiredPrisonerBed>
+	<RTRS.Rule_RequiredPrisonerBed_Desc>В комнате должна быть ровно одна кровать, назначенная заключённым.</RTRS.Rule_RequiredPrisonerBed_Desc>
+	<RTRS.Rule_RequiredPrisonerBeds>Требуются кровати заключённых</RTRS.Rule_RequiredPrisonerBeds>
+	<RTRS.Rule_RequiredPrisonerBeds_Desc>В комнате должно быть не менее 2 кроватей, назначенных заключённым.</RTRS.Rule_RequiredPrisonerBeds_Desc>
+	<RTRS.Rule_RequiredAnimalBed>Требуется кровать для животных</RTRS.Rule_RequiredAnimalBed>
+	<RTRS.Rule_RequiredAnimalBed_Desc>В комнате должна быть хотя бы одна кровать для животных.</RTRS.Rule_RequiredAnimalBed_Desc>
+	<RTRS.Rule_RequiredHumanBeds>Требуются человеческие кровати</RTRS.Rule_RequiredHumanBeds>
+	<RTRS.Rule_RequiredHumanBeds_Desc>В комнате должно быть не менее 2 человеческих кроватей, не медицинских и не назначенных заключённым.</RTRS.Rule_RequiredHumanBeds_Desc>
+	<RTRS.Rule_NotBedroom>НЕ должна быть спальней</RTRS.Rule_NotBedroom>
+	<RTRS.Rule_NotBedroom_Desc>Кровати не должны принадлежать одной семье или паре, иначе комната будет считаться спальней.</RTRS.Rule_NotBedroom_Desc>
+	<RTRS.Rule_RequiredSarcophagus>Требуется саркофаг</RTRS.Rule_RequiredSarcophagus>
+	<RTRS.Rule_RequiredSarcophagus_Desc>В комнате должен быть хотя бы один саркофаг.</RTRS.Rule_RequiredSarcophagus_Desc>
+	<RTRS.Rule_RequiredStorage>Требуется хранилище</RTRS.Rule_RequiredStorage>
+	<RTRS.Rule_RequiredStorage_Desc>В комнате должно быть хотя бы одно хранилище (полка, зона хранения и т.д.).</RTRS.Rule_RequiredStorage_Desc>
+	<RTRS.Rule_RequiredKitchen>Требуется кухонный стол</RTRS.Rule_RequiredKitchen>
+	<RTRS.Rule_RequiredKitchen_Desc>В комнате должен быть хотя бы один рабочий стол, способный производить съедобную еду.</RTRS.Rule_RequiredKitchen_Desc>
+	<RTRS.Rule_RequiredWorkshop>Требуется мастерская</RTRS.Rule_RequiredWorkshop>
+	<RTRS.Rule_RequiredWorkshop_Desc>В комнате должен быть хотя бы один рабочий стол с ролью «Мастерская».</RTRS.Rule_RequiredWorkshop_Desc>
+	<RTRS.Rule_RequiredLaboratory>Требуется лаборатория</RTRS.Rule_RequiredLaboratory>
+	<RTRS.Rule_RequiredLaboratory_Desc>В комнате должен быть хотя бы один рабочий стол с ролью «Лаборатория».</RTRS.Rule_RequiredLaboratory_Desc>
+	<RTRS.Rule_RequiredAltar>Требуется алтарь</RTRS.Rule_RequiredAltar>
+	<RTRS.Rule_RequiredAltar_Desc>В комнате должен быть хотя бы один алтарь, связанный с идеологией колонии.</RTRS.Rule_RequiredAltar_Desc>
+	<RTRS.Rule_RequiredChildBeds>Требуются детские кровати</RTRS.Rule_RequiredChildBeds>
+	<RTRS.Rule_RequiredChildBeds_Desc>В комнате должно быть не менее 2 маленьких кроватей, подходящих для детей.</RTRS.Rule_RequiredChildBeds_Desc>
+	<RTRS.Rule_ForbiddenHumanBeds>Человеческие кровати запрещены</RTRS.Rule_ForbiddenHumanBeds>
+	<RTRS.Rule_ForbiddenHumanBeds_Desc>В комнате не должно быть человеческих кроватей.</RTRS.Rule_ForbiddenHumanBeds_Desc>
+	<RTRS.Rule_RequiredBabyPlay>Требуются предметы для игр младенцев</RTRS.Rule_RequiredBabyPlay>
+	<RTRS.Rule_RequiredBabyPlay_Desc>В комнате должен быть хотя бы один предмет, стимулирующий игры младенцев.</RTRS.Rule_RequiredBabyPlay_Desc>
+	<RTRS.Rule_RequiredSchoolFurniture>Требуется школьная мебель</RTRS.Rule_RequiredSchoolFurniture>
+	<RTRS.Rule_RequiredSchoolFurniture_Desc>В комнате должна быть хотя бы одна школьная парта или классная доска.</RTRS.Rule_RequiredSchoolFurniture_Desc>
+	<RTRS.Rule_RequiredDeathrest>Требуется оборудование смертного сна</RTRS.Rule_RequiredDeathrest>
+	<RTRS.Rule_RequiredDeathrest_Desc>В комнате должен быть хотя бы один саркофаг смертного сна или совместимый предмет.</RTRS.Rule_RequiredDeathrest_Desc>
+	<RTRS.Rule_RequiredEntityHolder>Требуется держатель сущностей</RTRS.Rule_RequiredEntityHolder>
+	<RTRS.Rule_RequiredEntityHolder_Desc>В комнате должно быть хотя бы одно устройство для содержания сущностей.</RTRS.Rule_RequiredEntityHolder_Desc>
+	<RTRS.Rule_RequiredPsychicRitualSpot>Требуется место психического ритуала</RTRS.Rule_RequiredPsychicRitualSpot>
+	<RTRS.Rule_RequiredPsychicRitualSpot_Desc>В комнате должно быть хотя бы одно место для психического ритуала.</RTRS.Rule_RequiredPsychicRitualSpot_Desc>
+	<RTRS.Rule_ForbiddenEntityHolder>Держатели сущностей запрещены</RTRS.Rule_ForbiddenEntityHolder>
+	<RTRS.Rule_ForbiddenEntityHolder_Desc>В комнате не должно быть держателей сущностей, таких как саркофаги или крипто-капсулы.</RTRS.Rule_ForbiddenEntityHolder_Desc>
+	<RTRS.Rule_ForbiddenBeds>Кровати запрещены</RTRS.Rule_ForbiddenBeds>
+	<RTRS.Rule_ForbiddenBeds_Desc>В комнате не должно быть кроватей.</RTRS.Rule_ForbiddenBeds_Desc>
+	<RTRS.Rule_ForbiddenThrones>Троны запрещены</RTRS.Rule_ForbiddenThrones>
+	<RTRS.Rule_ForbiddenThrones_Desc>В комнате не должно быть тронов.</RTRS.Rule_ForbiddenThrones_Desc>
+	<RTRS.Rule_ForbiddenWorkTables>Рабочие столы запрещены</RTRS.Rule_ForbiddenWorkTables>
+	<RTRS.Rule_ForbiddenWorkTables_Desc>В комнате не должно быть рабочих столов.</RTRS.Rule_ForbiddenWorkTables_Desc>
+	<RTRS.Rule_ForbiddenOtherWorkTableRole>Ограничение роли рабочего стола</RTRS.Rule_ForbiddenOtherWorkTableRole>
+	<RTRS.Rule_ForbiddenOtherWorkTableRole_Desc>Если в комнате есть рабочий стол, его роль должна соответствовать типу этой комнаты.</RTRS.Rule_ForbiddenOtherWorkTableRole_Desc>
+	<RTRS.Rule_RequiredMusicalInstrument>Требуется музыкальный инструмент</RTRS.Rule_RequiredMusicalInstrument>
+	<RTRS.Rule_RequiredMusicalInstrument_Desc>В комнате должен быть хотя бы один музыкальный инструмент.</RTRS.Rule_RequiredMusicalInstrument_Desc>
+	<RTRS.Rule_RequiredArt>Требуются произведения искусства</RTRS.Rule_RequiredArt>
+	<RTRS.Rule_RequiredArt_Desc>В комнате должно быть не менее 4 произведений искусства (скульптуры или картины).</RTRS.Rule_RequiredArt_Desc>
+	<!-- Описания правил -->
+	<RTRS.BedDesc_HumanBed>Кровать человеческого размера, не медицинская, не назначена заключённым.</RTRS.BedDesc_HumanBed>
+	<RTRS.BedDesc_MedicalBed>Медицинская кровать для лечения пациентов.</RTRS.BedDesc_MedicalBed>
+	<RTRS.BedDesc_PrisonerBed>Кровать, назначенная заключённым.</RTRS.BedDesc_PrisonerBed>
+	<RTRS.BedDesc_AnimalBed>Кровать для животных.</RTRS.BedDesc_AnimalBed>
+	<RTRS.BedDesc_ChildBed>Маленькая кровать, подходящая для детей.</RTRS.BedDesc_ChildBed>
+	<RTRS.BedroomLogicDesc>Кровати должны принадлежать членам одной семьи или пары. Дети могут спать с родителями. Если кровати принадлежат не связанным колонистам, комната не будет считаться спальней.</RTRS.BedroomLogicDesc>
+	<RTRS.BarracksLogicDesc>Кровати НЕ должны принадлежать членам одной семьи или пары. Если все кровати принадлежат одной семье, комната будет считаться спальней, а не казармами.</RTRS.BarracksLogicDesc>
+	<!-- Названия классов -->
+	<RTRS.Class_Throne>трон</RTRS.Class_Throne>
+	<RTRS.Class_HumanBed>человеческая кровать</RTRS.Class_HumanBed>
+	<RTRS.Class_Bed>кровать</RTRS.Class_Bed>
+	<RTRS.Class_WorkTable>рабочий стол</RTRS.Class_WorkTable>
+	<RTRS.Class_MusicalInstrument>музыкальный инструмент</RTRS.Class_MusicalInstrument>
+	<RTRS.Class_Art>произведение искусства</RTRS.Class_Art>
 </LanguageData>

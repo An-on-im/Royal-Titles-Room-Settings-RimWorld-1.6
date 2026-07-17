@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using RoyalTitlesRoomSettings.DTO;
+using RoyalTitlesRoomSettings.Services;
 using System;
 using UnityEngine;
 using Verse;
@@ -12,7 +13,8 @@ namespace RoyalTitlesRoomSettings.UI
         {
             if (req == null)
                 return;
-            var type = Type.GetType(req.TypeName + ", Assembly-CSharp");
+
+            var type = RequirementConverter.GetTypeByName(req.TypeName);
             if (type == null)
             {
                 UIDrawHelpers.DrawCenteredText(listing.GetRect(28f), "RTRS.NoEditor".Translate(req.TypeName ?? "?"), Color.gray);
@@ -78,12 +80,43 @@ namespace RoyalTitlesRoomSettings.UI
             }
             else if (type.Name == "RoomRequirement_InstrumentSpace")
             {
-                UIDrawHelpers.DrawInfoLabel(listing, "RTRS.NoFieldsInstrument".Translate());
+                DrawInstrumentSpaceDescription(listing);
             }
             else
             {
                 UIDrawHelpers.DrawInfoLabel(listing, "RTRS.NoEditor".Translate(type.Name));
             }
+        }
+
+        private static void DrawInstrumentSpaceDescription(Listing_Standard listing)
+        {
+            var savedColor = GUI.color;
+            var savedFont = Text.Font;
+
+            listing.Gap(4f);
+
+            Text.Font = GameFont.Small;
+            GUI.color = new Color(0.85f, 0.85f, 0.85f);
+            listing.Label("RTRS.InstrumentSpace_Desc".Translate());
+
+            listing.Gap(6f);
+
+            Text.Font = GameFont.Tiny;
+            GUI.color = new Color(0.65f, 0.65f, 0.65f);
+            listing.Label("RTRS.InstrumentSpace_Sizes".Translate());
+            listing.Label("  • " + "RTRS.InstrumentSpace_HarpHarpsichord".Translate());
+            listing.Label("  • " + "RTRS.InstrumentSpace_Piano".Translate());
+            listing.Label("  • " + "RTRS.InstrumentSpace_Organ".Translate());
+
+            listing.Gap(6f);
+
+            GUI.color = new Color(0.65f, 0.65f, 0.65f);
+            listing.Label("RTRS.InstrumentSpace_Rules".Translate());
+
+            GUI.color = savedColor;
+            Text.Font = savedFont;
+
+            listing.Gap(4f);
         }
     }
 }
