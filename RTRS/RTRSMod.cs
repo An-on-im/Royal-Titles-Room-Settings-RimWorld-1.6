@@ -30,4 +30,13 @@ namespace RoyalTitlesRoomSettings
             RequirementsApplier.PatchAll();
         }
     }
+
+    [StaticConstructorOnStartup]
+    public static class ModBootstrap
+    {
+        static ModBootstrap()
+        {
+            RequirementsApplier.PatchAll();
+        }
+    }
 }
